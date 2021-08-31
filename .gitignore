@@ -6,5 +6,5 @@ lib
 .DS_Store
 *.local
 *.bs.js
-*.lock
+.bsb.lock
 *.log
