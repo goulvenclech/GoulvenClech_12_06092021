@@ -1,6 +1,6 @@
 # Sportsee
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d3b121d4-6665-4f72-8961-92ce3f533732/deploy-status)](https://app.netlify.com/sites/epic-meitner-071d89/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b961153a-b605-4a1b-a7d8-d1c5b3c687c9/deploy-status)](https://app.netlify.com/sites/distracted-golick-e7f03d/deploys)
 
 Kasa is a C2C application for renting apartments. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [Recharts](https://recharts.org/en-US/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
 
@@ -10,7 +10,7 @@ Kasa is a C2C application for renting apartments. Project 12 of the OpenClassroo
 - specifications, organisation and main components of [every app page]()
 
 **Useful links:**
-- [Live demo 🌍](https://oc-p11.goulven-clech.dev) 
+- [Live demo 🌍](https://oc-p12.goulven-clech.dev) 
 - [Repository 📖](https://github.com/GoulvenC/GoulvenClech_12_06092021)
 - [Documentation 📑](https://github.com/GoulvenC/GoulvenClech_12_06092021/wiki)
 - [Figma mock-up 🖼️](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR)
@@ -25,11 +25,13 @@ Kasa is a C2C application for renting apartments. Project 12 of the OpenClassroo
 
 3 - Install the dependencies with `yarn install`
 
-3 - Start [Vite](https://vitejs.dev/) live server with `yarn dev`
+3 - Start [ReScript](https://rescript-lang.org/) with `yarn start`
 
-4 - Run the tests with `yarn test`. Results can be viewed on the `/coverage/lcov-report/` page.
+4 - Start [Vite](https://vitejs.dev/) live server with `yarn dev`
 
-5 - To obtain a production version do `yarn build`
+5 - Run the tests with `yarn test`. Results can be viewed on the `/coverage/lcov-report/` page.
+
+6 - To obtain a production version do `yarn build`
 
 ## License
 

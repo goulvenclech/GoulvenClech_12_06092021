@@ -1,8 +1,12 @@
-// src/Test.res
+%%raw("import 'tailwindcss/tailwind.css'")
+
 @react.component
 let make = () => {
-  <div> 
-    <Test />
-    <Subtitle /> 
-  </div>
+  let url = RescriptReactRouter.useUrl()
+
+  switch url.path {
+    | list{"article", id} => <Article id />
+    | list{} => <Home />
+    | _ => <NotFound />
+  }
 }

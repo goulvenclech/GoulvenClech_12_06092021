@@ -1,9 +1,10 @@
 node_modules
-.DS_Store
 dist
 dist-ssr
-*.local
-*bs*js
-*.lock
+lib
 .merlin
-lib/
+.DS_Store
+*.local
+*.bs.js
+*.lock
+*.log
