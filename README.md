@@ -2,10 +2,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b961153a-b605-4a1b-a7d8-d1c5b3c687c9/deploy-status)](https://app.netlify.com/sites/distracted-golick-e7f03d/deploys)
 
-Kasa is a C2C application for renting apartments. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [Recharts](https://recharts.org/en-US/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
+Sportsee is an application for monitoring your physical activity. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [Recharts](https://recharts.org/en-US/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
 
 **Documentation :**
-- [Home page](https://github.com/GoulvenC/GoulvenClech_12_02082021/wiki) ([project organisation]() | [detailed specifications]())
+- [Home page](https://github.com/GoulvenC/GoulvenClech_12_02082021/wiki) ([project organisation]() | [repository description]() | [installation]())
 - [technical specifications]() ([tech stack]() | [about ReScript]() | [about Recharts]())
 - specifications, organisation and main components of [every app page]()
 
@@ -25,13 +25,13 @@ Kasa is a C2C application for renting apartments. Project 12 of the OpenClassroo
 
 3 - Install the dependencies with `yarn install`
 
-3 - Start [ReScript](https://rescript-lang.org/) with `yarn start`
+4 - Start [ReScript](https://rescript-lang.org/) with `yarn start`
 
-4 - Start [Vite](https://vitejs.dev/) live server with `yarn dev`
+5 - Start [Vite](https://vitejs.dev/) live server with `yarn dev`
 
-5 - Run the tests with `yarn test`. Results can be viewed on the `/coverage/lcov-report/` page.
+6 - Run the tests with `yarn test`. Results can be viewed on the `/coverage/lcov-report/` page.
 
-6 - To obtain a production version do `yarn build`
+7 - To obtain a production version do `yarn build`
 
 ## License
 
