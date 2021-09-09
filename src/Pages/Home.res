@@ -1,8 +1,9 @@
 @react.component
 let make = () => {
-  <main className="mx-auto my-4 max-w-lg">
+  <main className="mx-auto p-4 max-w-screen-xl">
+    <Navigation />
     <Title />
     <Subtitle />
-    <Navigation />
+    <Data />
   </main>
 }

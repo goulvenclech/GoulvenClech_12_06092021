@@ -2,11 +2,11 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b961153a-b605-4a1b-a7d8-d1c5b3c687c9/deploy-status)](https://app.netlify.com/sites/distracted-golick-e7f03d/deploys)
 
-Sportsee is an application for monitoring your physical activity. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [Recharts](https://recharts.org/en-US/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
+Sportsee is an application for monitoring your physical activity. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [D3](https://d3js.org/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
 
 **Documentation :**
 - [Home page](https://github.com/GoulvenC/GoulvenClech_12_02082021/wiki) ([project organisation]() | [repository description]() | [installation]())
-- [technical specifications]() ([tech stack]() | [about ReScript]() | [about Recharts]())
+- [technical specifications]() ([tech stack]() | [about ReScript]() | [about D3]())
 - specifications, organisation and main components of [every app page]()
 
 **Useful links:**
