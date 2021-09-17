@@ -1,66 +1,80 @@
-type catData = {file: string};
-
-module Decode = {
-  open Json.Decode
-  let catData = (data: Js.Json.t) => {
-    file: field("file", string, data),
-  }
+type userInfos = {
+    firstName: string,
+    lastName: string,
+    age: int
 }
 
-let useUserImage = (): string => {
+type keyData = {
+    calorieCount: int,
+    proteinCount: int, 
+    carbohydrateCount: int,
+    lipidCount: int
+}
 
-    let (result, setResult) = React.useState(_ => "https://lh3.googleusercontent.com/proxy/usXOb9ToLP7Dn3PIB78Zoi4gkjLJZXPxpYGm_ggViOe_Dx3PyT1slNtAEDWXU2xHYAc8h2d86tOJdGacD8Wue1CPlspQ3MmB695bFPn2nztXx7XPJnby2onhKLEhZiBw1IM")
+type userData = {
+    id: int,
+    userInfos: userInfos,
+    todayScore: float,
+    keyData: keyData,
+}
+
+type respond = {
+    data: userData
+}
+
+let emptyUserData: userData = {
+    id: 0,
+    userInfos:{
+        firstName: "",
+        lastName: "",
+        age: 0},
+    todayScore: 0.1,
+    keyData:{
+        calorieCount: 0,
+        proteinCount: 0, 
+        carbohydrateCount: 0,
+        lipidCount:0}
+}
+
+module Decoder = {
+    open Json.Decode
+    let keyData = (json) => {
+        calorieCount: json |> field("calorieCount", int),
+        proteinCount: json |> field("proteinCount", int),
+        carbohydrateCount: json |> field("carbohydrateCount", int),
+        lipidCount: json |> field("lipidCount", int),
+    }
+    let userInfos = (json) => {
+        firstName: json |> field("firstName", string),
+        lastName: json |> field("lastName", string),
+        age: json |> field("age", int),
+    }
+    let userData = (json) => {
+        id: json |> field("id", int),
+        userInfos: json |> field("userInfos", userInfos),
+        todayScore: json |> field("todayScore", float),
+        keyData: json |> field("keyData", keyData),
+    }
+    let respond = (json) => {
+        data: json |> field("data", userData),
+    }
+}
+
+let useUserData = (userID: string): userData => {
+
+    let (result, setResult) = React.useState(_ => emptyUserData)
 
     React.useEffect0(() => {
-        let fetchJson = (url, decoder) =>
-            Fetch.fetch(url)
+        let fetchJson = () =>
+            Fetch.fetch(`http://localhost:3000/user/${userID}`)
                 ->Js.Promise.then_(Fetch.Response.json, _)
-                ->Js.Promise.then_(obj => obj->decoder->Js.Promise.resolve, _)
+                ->Js.Promise.then_(obj => obj->Decoder.respond->Js.Promise.resolve, _)
 
-        let fetchCat = () => fetchJson("https://aws.random.cat/meow", Decode.catData)
-
-        let _ = fetchCat()
-            ->Js.Promise.then_(data => setResult(_prev => data.file)->Js.Promise.resolve, _)
+        let _ = fetchJson()
+            ->Js.Promise.then_(data => setResult(_prev => data.data)->Js.Promise.resolve, _)
 
         None
     })
 
     result
 }
-
-
-/**
-
-type data = {"data":{
-    "id": int,
-    "userInfos":{
-        "firstName": string,
-        "lastName": string,
-        "age": int
-        },
-    "todayScore": float,
-    "keyData":{
-        "calorieCount": int,
-        "proteinCount": int, 
-        "carbohydrateCount": int,
-        "lipidCount": int
-        }
-    }
-}
-
-let emptyData = {"data":{
-    "id": 0,
-    "userInfos":{
-        "firstName": "",
-        "lastName": "",
-        "age": 0},
-    "todayScore": 0.1,
-    "keyData":{
-        "calorieCount": 0,
-        "proteinCount": 0, 
-        "carbohydrateCount": 0,
-        "lipidCount":0}
-    }
-}
-
-*/

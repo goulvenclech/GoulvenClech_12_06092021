@@ -1,9 +1,9 @@
 @react.component
 let make = () => {
 
-    let image = ApiHooks.useUserImage()
+    let user = ApiHooks.useUserData("12")
 
-    <img src={image} />
+    <p>{React.string(user.userInfos.firstName)}</p>
 }
 
 

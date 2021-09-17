@@ -1,4 +1,4 @@
 @react.component
 let make = () => {
-  <p className="text-red-500"> {React.string("Ceci est un nouveau super projet !")} </p>
+    <p>{React.string("Cliquez sur un utilisateur pour voir ces stats.")}</p>
 }

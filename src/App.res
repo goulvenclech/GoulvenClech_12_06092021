@@ -5,7 +5,7 @@ let make = () => {
   let url = RescriptReactRouter.useUrl()
 
   switch url.path {
-    | list{"article", id} => <Article id />
+    | list{"user", id} => <User key={id} id />
     | list{} => <Home />
     | _ => <NotFound />
   }
