@@ -16,6 +16,6 @@
     "reason": { 
         "react-jsx": 3 
     },
-    "bs-dependencies": ["@rescript/react", "bs-fetch"]
+    "bs-dependencies": ["@rescript/react", "bs-fetch", "@glennsl/bs-json"]
   }
   

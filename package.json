@@ -9,6 +9,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@glennsl/bs-json": "^5.0.4",
     "@rescript/react": "^0.10.3",
     "d3": "^7.0.1",
     "react": "^17.0.0",
