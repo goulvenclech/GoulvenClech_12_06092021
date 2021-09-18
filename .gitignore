@@ -4,6 +4,7 @@ dist-ssr
 lib
 .merlin
 .DS_Store
+.tool-versions
 *.local
 *.bs.js
 .bsb.lock

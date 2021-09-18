@@ -4,5 +4,6 @@ let make = (~id: string) => {
         <Navigation />
         <Profile id={id} />
         <Sessions id={id} />
+        <Average id={id} />
     </main>
 }
