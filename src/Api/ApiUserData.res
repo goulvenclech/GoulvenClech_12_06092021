@@ -1,28 +1,32 @@
+/**
+* ApiUserData contain all the types & the decoder of the UserData end point 
+* of SportSee's back end.
+*/
+
+// types of the data
 type userInfos = {
     firstName: string,
     lastName: string,
     age: int
 }
-
 type keyData = {
     calorieCount: int,
     proteinCount: int, 
     carbohydrateCount: int,
     lipidCount: int
 }
-
 type userData = {
     id: int,
     userInfos: userInfos,
     todayScore: float,
     keyData: keyData,
 }
-
+// type of the fetching respond
 type respond = {
     data: userData
 }
-
-let emptyUserData: userData = {
+// an empty respond used as placeholder
+let emptyRespond: respond = {data:{
     id: 0,
     userInfos:{
         firstName: "",
@@ -34,9 +38,9 @@ let emptyUserData: userData = {
         proteinCount: 0, 
         carbohydrateCount: 0,
         lipidCount:0}
-}
-
-module Decoder = {
+}}
+// a decoder to transform the JSON respond into a proper ReScript record
+module Decode = {
     open Json.Decode
     let keyData = (json) => {
         calorieCount: json |> field("calorieCount", int),
@@ -58,23 +62,4 @@ module Decoder = {
     let respond = (json) => {
         data: json |> field("data", userData),
     }
-}
-
-let useUserData = (userID: string): userData => {
-
-    let (result, setResult) = React.useState(_ => emptyUserData)
-
-    React.useEffect0(() => {
-        let fetchJson = () =>
-            Fetch.fetch(`http://localhost:3000/user/${userID}`)
-                ->Js.Promise.then_(Fetch.Response.json, _)
-                ->Js.Promise.then_(obj => obj->Decoder.respond->Js.Promise.resolve, _)
-
-        let _ = fetchJson()
-            ->Js.Promise.then_(data => setResult(_prev => data.data)->Js.Promise.resolve, _)
-
-        None
-    })
-
-    result
 }
