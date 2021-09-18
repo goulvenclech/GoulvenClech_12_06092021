@@ -58,3 +58,20 @@ let useUserAverageSessions = (userID: string): ApiUserAverageSessions.userActivi
 
     result.data
 }
+
+// call the the Performance end point of SportSee's back end. Return the data or an error.
+let useUserPerformance = (userID: string): ApiUserPerformance.userPerformance => {
+
+    let (result, setResult) = React.useState(_ => ApiUserPerformance.emptyRespond)
+    let (error, setError) = React.useState(_ => "Pas d'erreur")
+
+    React.useEffect0(() => {
+        let fetchUserData = (userID) => fetchJson(`http://localhost:3000/user/${userID}/performance`, ApiUserPerformance.Decode.respond)
+        let _ = fetchUserData(userID)
+        ->Js.Promise.then_(data => setResult(_prev => data)
+        ->Js.Promise.resolve, _)
+        None
+    })
+
+    result.data
+}
