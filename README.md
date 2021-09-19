@@ -4,6 +4,8 @@
 
 Sportsee is an application for monitoring your physical activity. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [D3](https://d3js.org/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
 
+> ⚠️ This project need you to clone and run [this back end](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard/) to work properly. But currently it has an issue, [read my pull request](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard/pull/11) for more information.
+
 **Documentation :**
 - [Home page](https://github.com/GoulvenC/GoulvenClech_12_02082021/wiki) ([project organisation]() | [repository description]() | [installation]())
 - [technical specifications]() ([tech stack]() | [about ReScript]() | [about D3]())
