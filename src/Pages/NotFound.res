@@ -1,6 +1,6 @@
 @react.component
 let make = () => {
-  <main className="mx-auto p-4 max-w-screen-xl">
+  <main className="mx-auto p-4 flex flex-col gap-4 max-w-screen-xl">
     <Navigation />
     <h1 className="font-bold"> 
       {React.string("Cette page n'existe pas !")} 
