@@ -15,7 +15,7 @@ let useUserData = (userID: string): ApiUserData.userData => {
     let (error, setError) = React.useState(_ => "Pas d'erreur")
 
     React.useEffect0(() => {
-        let fetchUserData = (userID) => fetchJson(`http://localhost:3000/user/${userID}`, ApiUserData.Decode.respond)
+        let fetchUserData = (userID) => fetchJson(`./user/${userID}.json`, ApiUserData.Decode.respond)
         let _ = fetchUserData(userID)
         ->Js.Promise.then_(data => setResult(_prev => data)
         ->Js.Promise.resolve, _)
@@ -32,7 +32,7 @@ let useUserActivity = (userID: string): ApiUserActivity.userActivity => {
     let (error, setError) = React.useState(_ => "Pas d'erreur")
 
     React.useEffect0(() => {
-        let fetchUserData = (userID) => fetchJson(`http://localhost:3000/user/${userID}/activity`, ApiUserActivity.Decode.respond)
+        let fetchUserData = (userID) => fetchJson(`./user/${userID}/activity.json`, ApiUserActivity.Decode.respond)
         let _ = fetchUserData(userID)
         ->Js.Promise.then_(data => setResult(_prev => data)
         ->Js.Promise.resolve, _)
@@ -49,7 +49,7 @@ let useUserAverageSessions = (userID: string): ApiUserAverageSessions.userActivi
     let (error, setError) = React.useState(_ => "Pas d'erreur")
 
     React.useEffect0(() => {
-        let fetchUserData = (userID) => fetchJson(`http://localhost:3000/user/${userID}/average-sessions`, ApiUserAverageSessions.Decode.respond)
+        let fetchUserData = (userID) => fetchJson(`./user/${userID}/average-sessions.json`, ApiUserAverageSessions.Decode.respond)
         let _ = fetchUserData(userID)
         ->Js.Promise.then_(data => setResult(_prev => data)
         ->Js.Promise.resolve, _)
@@ -66,7 +66,7 @@ let useUserPerformance = (userID: string): ApiUserPerformance.userPerformance =>
     let (error, setError) = React.useState(_ => "Pas d'erreur")
 
     React.useEffect0(() => {
-        let fetchUserData = (userID) => fetchJson(`http://localhost:3000/user/${userID}/performance`, ApiUserPerformance.Decode.respond)
+        let fetchUserData = (userID) => fetchJson(`./user/${userID}/performance.json`, ApiUserPerformance.Decode.respond)
         let _ = fetchUserData(userID)
         ->Js.Promise.then_(data => setResult(_prev => data)
         ->Js.Promise.resolve, _)
