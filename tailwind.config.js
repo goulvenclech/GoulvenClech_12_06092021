@@ -13,7 +13,11 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      fill: {
+        transparent: "transparent",
+      }
+    },
   },
   variants: {
     extend: {},
