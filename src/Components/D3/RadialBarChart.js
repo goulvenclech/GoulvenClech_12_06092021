@@ -8,19 +8,12 @@ export function radialBarChart(score) {
     const radius = 110
     const barWidth = 20
     // Create the chart
-    var chart = d3.select("#chart")
+    var chart = d3.select("#RadialBarChart")
         .attr("width", radius * 3)
         .attr("height", radius * 3)
     ;
     // Clean obsolete chart 🗑️
-    chart.selectChildren().remove()
-   // Background circle
-    chart.append("svg:circle")
-        .attr('cx', radius * 1.5)
-        .attr('cy', radius * 1.5)
-        .attr('r', radius + barWidth / 2)
-        .attr('fill', 'white');
-    ;
+    chart.selectAll("#RadialBarChart .d3").remove()
     // Register our arc
     var arc = d3.arc()
         .innerRadius(radius)
@@ -34,7 +27,7 @@ export function radialBarChart(score) {
         .datum({
             endAngle: -0.1,
         })
-        .attr("class", "chart1")
+        .attr("class", "d3")
         .style("fill", "red")
         .attr("transform", "translate(" + radius * 1.5 + "," + radius * 1.5 + ")")
         // use our arc
@@ -60,20 +53,7 @@ export function radialBarChart(score) {
         .attr("y", radius * 1.4)
         .style("font-size", "2rem")
         .style("text-anchor", "middle")
+        .attr("class", "d3")
         .text(score * 100 + "%")
-    ;
-    chart.append("svg:text")
-        .attr("x", radius * 1.5)
-        .attr("y", radius * 1.4 + 25)
-        .style("font-size", "1.2rem")
-        .style("text-anchor", "middle")
-        .text("de votre")
-    ;
-    chart.append("svg:text")
-        .attr("x", radius * 1.5)
-        .attr("y", radius * 1.4 + 50)
-        .style("font-size", "1.2rem")
-        .style("text-anchor", "middle")
-        .text("objectif")
     ;
 }
