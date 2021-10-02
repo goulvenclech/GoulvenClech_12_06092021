@@ -22,22 +22,22 @@ let make = (~id: string) => {
       strokeWidth="1" stroke="white" fill="transparent" strokeOpacity="1" fillOpacity="0.5"></path>
       // Some text
       <text x="140" y="20" className="text-sm" style={ReactDOM.Style.make(~textAnchor="middle", ~fill="white", ())}>
-        {React.string(`Cardio`)} 
+        {React.string(`Intensité`)} 
       </text>
       <text x="25" y="75" className="text-sm" style={ReactDOM.Style.make(~textAnchor="middle", ~fill="white", ())}>
-        {React.string(`Énergie`)} 
+        {React.string(`Cardio`)} 
       </text>
       <text x="25" y="195" className="text-sm" style={ReactDOM.Style.make(~textAnchor="middle", ~fill="white", ())}>
-        {React.string(`Endurance`)}
+        {React.string(`Énergie`)} 
       </text>
       <text x="140" y="250" className="text-sm" style={ReactDOM.Style.make(~textAnchor="middle", ~fill="white", ())}>
-        {React.string(`Force`)} 
+        {React.string(`Endurance`)} 
       </text>
       <text x="250" y="195" className="text-sm" style={ReactDOM.Style.make(~textAnchor="middle", ~fill="white", ())}>
-        {React.string(`Vitesse`)} 
+        {React.string(`Force`)} 
       </text>
       <text x="255" y="75" className="text-sm" style={ReactDOM.Style.make(~textAnchor="middle", ~fill="white", ())}>
-        {React.string(`Intensité`)} 
+        {React.string(`Vitesse`)} 
       </text>
     </svg>
   </section>

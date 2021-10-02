@@ -12,18 +12,35 @@ export function spiderChart(data) {
         .attr("height", 350)
     // Clean obsolete chart 🗑️
     svg.selectAll("#SpiderChart .d3").remove()
+    // register our line
+    let line = d3.line()
+        .x(d => d.x)
+        .y(d => d.y)
     //draw our data ✍🏼
     svg.append("path")
-    .datum(getPathCoordinates(data))
-    .attr("d",d3.line()
-        .x(d => d.x)
-        .y(d => d.y))
+    .datum(getPathCoordinates([20,20,20,20,20,20]))
+    .attr("d", line)
     .attr("class", "d3")
     .attr("fill", "red")
     .attr("fill-opacity", 0.66)
+    // launch a transition arcTween with the new endAngle 
+    .transition()
+        .duration(750)
+        .call(lineTween, data)
+    // Register our fantastic transition ✨
+    function lineTween(transition, dataPoints) {
+        transition.attrTween("d", function (d) {
+            let interpolateEnd = d3.interpolate(d, getPathCoordinates(dataPoints))
+            return function (t) {
+                d = interpolateEnd(t)
+                return line(d)
+            }
+        })
+    }
     // Some tools to transform our data into coordinates and path 🛠️
     function getPathCoordinates(dataPoints){
-        let coordinates = dataPoints.map((point, index) => angleToCoordinate((Math.PI / 2) + (2 * Math.PI * index / dataPoints.length), point))
+        let coordinates = dataPoints.map((point, index) => 
+            angleToCoordinate((Math.PI / 2) + (2 * Math.PI * index / dataPoints.length) + (2 * Math.PI / dataPoints.length), point))
         return coordinates
     }
     function angleToCoordinate(angle, value){
