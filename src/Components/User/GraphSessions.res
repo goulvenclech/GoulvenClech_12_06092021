@@ -8,7 +8,7 @@ let make = (~id: string) => {
   // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
   linearChart(~data = userPerformances)
 
-  <section className="bg-red-600 rounded-lg w-72 h-72">
+  <section className="bg-red-600 rounded-lg w-72 h-72 overflow-hidden">
     <h3 className="w-3/4 p-4 font-semibold text-red-300 text-lg"> 
       {React.string(`Durée moyenne des sessions`)} 
     </h3>

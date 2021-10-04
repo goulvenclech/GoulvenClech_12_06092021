@@ -14,6 +14,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      spacing: {
+        "224": "56rem",
+      },
       fill: {
         transparent: "transparent",
       }

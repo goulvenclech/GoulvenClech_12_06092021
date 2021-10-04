@@ -7,17 +7,17 @@ export function spiderChart(data) {
     // Create the scales for rank our data
     let radialScale = d3.scaleLinear().domain([0,250]).range([0,105])
     // Create the chart
-    let svg = d3.select("#SpiderChart")
+    let chart = d3.select("#SpiderChart")
         .attr("width", 350)
         .attr("height", 350)
     // Clean obsolete chart 🗑️
-    svg.selectAll("#SpiderChart .d3").remove()
+    chart.selectAll("#SpiderChart .d3").remove()
     // register our line
     let line = d3.line()
         .x(d => d.x)
         .y(d => d.y)
     //draw our data ✍🏼
-    svg.append("path")
+    chart.append("path")
     .datum(getPathCoordinates([20,20,20,20,20,20]))
     .attr("d", line)
     .attr("class", "d3")

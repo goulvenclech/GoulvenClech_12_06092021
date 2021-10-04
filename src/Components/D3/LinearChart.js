@@ -5,18 +5,18 @@ import * as d3 from 'd3'
  */
 export function linearChart(data) {
     // Create the chart
-    let svg = d3.select("#linearChart")
+    let chart = d3.select("#linearChart")
         .attr("width", 350)
         .attr("height", 350)
     // Clean obsolete chart 🗑️
-    svg.selectAll("#linearChart .d3").remove()
+    chart.selectAll("#linearChart .d3").remove()
     // register our line
     let line = d3.line() 
         .x(d => d.x)
         .y(d => d.y)
         .curve(d3.curveBasis)
     //draw our path ✍🏼
-    svg.append("path")
+    chart.append("svg:path")
     .datum(getPathCoordinates([-15,0,15,30,45,60,75,90,100,115]))
     .attr("d", line)
     .attr("class", "d3")
@@ -45,7 +45,6 @@ export function linearChart(data) {
                 y: 150 - 150 * ( point /100 )
             }
         ))
-        console.log(dataPoints)
         return coordinates
     }
 }
