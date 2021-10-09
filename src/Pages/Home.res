@@ -1,8 +1,11 @@
 @react.component
 let make = () => {
-  <main className="mx-auto p-4 flex gap-4 flex-col max-w-screen-xl">
-    <Navigation />
-    <Title />
-    <SitePlan />
-  </main>
+  <>
+    <Navigation /> 
+    <main className="mx-auto max-w-screen-xl flex flex-col gap-4">
+      <Title />
+      <SitePlan />
+      <Footer />
+    </main>
+  </>
 }

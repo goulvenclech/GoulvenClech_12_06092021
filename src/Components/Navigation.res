@@ -1,9 +1,19 @@
 @react.component
 let make = () => {
-  <nav className="flex gap-4">
-      <Link name="Accueil" linkTo="/" />
-      <Link name="User 12" linkTo="/user/12" />
-      <Link name="User 18" linkTo="/user/18" />
-      <Link name="Erreur" linkTo="/adad" />
+  <nav className="flex px-16 py-2 items-center justify-between font-semibold text-xl text-white bg-black">
+      <img src="../../public/logo.png" className="h-12">
+      </img>
+      <p>
+        {React.string(`Accueil`)}
+      </p>
+      <p>
+        {React.string(`Profil`)}
+      </p>
+      <p>
+        {React.string(`Réglage`)}
+      </p>
+      <p>
+        {React.string(`Communauté`)}
+      </p>
   </nav>
 }

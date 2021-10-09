@@ -9,7 +9,7 @@ let make = (~id: string) => {
   // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
   barChart(~userWeights = userWeights, ~userCalories = userCalories)
 
-  <section className="bg-gray-100 rounded-lg p-4 w-224 h-72">
+  <section className="bg-gray-100 rounded-lg mx-4 w-224 h-72">
     <h3 className="w-3/4 font-semibold text-lg"> 
       {React.string(`Activité quotidienne`)} 
     </h3>

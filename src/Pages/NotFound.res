@@ -8,5 +8,6 @@ let make = () => {
     <p>
       {React.string("Voila qui est fort facheux...")}
     </p>
+    <Footer />
   </main>
 }
