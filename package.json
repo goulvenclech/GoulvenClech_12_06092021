@@ -21,7 +21,7 @@
     "bs-fetch": "^0.6.2",
     "postcss": "^8.3.6",
     "rescript": "^9.1.4",
-    "tailwindcss": "^2.2.9",
-    "vite": "^2.5.1"
+    "tailwindcss": "^2.2.15",
+    "vite": "^2.6.5"
   }
 }
