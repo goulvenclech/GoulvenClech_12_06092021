@@ -1,13 +1,18 @@
 @react.component
 let make = () => {
-  <main className="mx-auto p-4 flex flex-col gap-4 max-w-screen-xl">
+  <>
     <Navigation />
-    <h1 className="font-bold"> 
-      {React.string("Cette page n'existe pas !")} 
-    </h1>
-    <p>
-      {React.string("Voila qui est fort facheux...")}
-    </p>
-    <Footer />
-  </main>
+    <main className="mx-auto max-w-screen-xl flex flex-col gap-4">
+      <h2 className="pt-8 mx-4 text-5xl font-bold w-full leading-relaxed"> 
+          {React.string(`Erreur `)}
+          <span className="text-red-600">
+          {React.string(`404`)}
+          </span>
+      </h2>
+      <p className="px-4">
+        {React.string("Voila qui est fort facheux...")}
+      </p>
+      <Footer />
+    </main>
+  </>
 }
