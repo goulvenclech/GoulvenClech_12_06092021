@@ -2,7 +2,7 @@
 let make = () => {
   <nav className="flex px-16 py-2 items-center justify-between font-semibold text-xl text-white bg-black">
       <a onClick={_ => RescriptReactRouter.push("/")} tabIndex={0} className="cursor-pointer"> 
-              <img src="/public/logo.png" className="h-12" />
+              <img src="/logo.png" className="h-12" />
       </a>
       <a onClick={_ => RescriptReactRouter.push("/")} tabIndex={0} className="cursor-pointer">
         {React.string(`Accueil`)}
