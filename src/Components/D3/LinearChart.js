@@ -10,17 +10,6 @@ export function linearChart(data) {
         .attr("height", 350)
     // Clean obsolete chart 🗑️
     chart.selectAll("#linearChart .d3").remove()
-    // Not proud of this, I'll think of a better way
-    // add background rect
-    getPathCoordinates([...data]).map((coordinates) => {
-        let shadowRect = chart.append("svg:rect")
-            .attr('x', coordinates.x+41)
-            .attr('y', 0)
-            .attr('width', "100%")
-            .attr('height', 300)
-            .attr("class", "d3")
-            .attr('opacity', '0')
-    })
     // register our line
     let line = d3.line() 
         .x(d => d.x)
@@ -64,7 +53,6 @@ export function linearChart(data) {
                     .attr('opacity', '1')
                 dataText.transition()
                     .attr('opacity', '1')
-                // HOW ? HOW D3.js know which shadowRect to take ?  SORCERY !
                 shadowRect.transition()
                     .attr('opacity', '0.1')
             })
@@ -76,7 +64,6 @@ export function linearChart(data) {
                     .attr('opacity', '0')
                 dataText.transition()
                     .attr('opacity', '0')
-                // HOW ? HOW D3.js know which shadowRect to take ? SORCERY !
                 shadowRect.transition()
                     .attr('opacity', '0')
         })
