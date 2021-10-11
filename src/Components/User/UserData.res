@@ -1,6 +1,6 @@
 @react.component
 let make = () => {
-    <section className="px-4 lg:px-0 flex flex-wrap gap-4">
+    <section className="px-4 xl:px-0 flex flex-wrap gap-4">
         <article className="p-7 bg-gray-100 rounded-lg w-80 flex">
             <div className="bg-red-100 p-7 rounded-lg">
                 <svg width="17" height="20" viewBox="0 0 17 20" fill="red" xmlns="http://www.w3.org/2000/svg">
