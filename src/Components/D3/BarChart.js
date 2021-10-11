@@ -93,7 +93,7 @@ export function barChart(userWeights, userCalories) {
             .attr('y', 21)
             .attr('width', 60)
             .attr('height', 50)
-            .attr("class", "d3 info" + index + " text-red-500 fill-current")
+            .attr("class", "d3 text-red-500 fill-current")
             .attr('opacity', '0')
         let infosCalory = innerChart.append("svg:text")
             .attr("x", 120+index*110)
