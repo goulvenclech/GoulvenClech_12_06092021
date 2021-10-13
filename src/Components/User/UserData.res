@@ -54,8 +54,8 @@ let make = (~calorieCount: int, ~proteinCount: int, ~carbohydrateCount: int, ~li
 
     <section className="px-4 xl:px-0 flex flex-wrap gap-4">
         {
-            React.array(Belt.Array.map(datas, data => {
-                <article className="p-7 bg-gray-100 rounded-lg w-80 flex">
+            React.array(Belt.Array.mapWithIndex(datas, (index, data) => {
+                <article className="p-7 bg-gray-100 rounded-lg w-80 flex" key={Belt.Int.toString(index)}>
                     // Required to add every color in tailwind.config.js safelist
                     <div className=`bg-${data.color}-100 p-7 rounded-lg`>
                         {data.icon}

@@ -1,4 +1,4 @@
-import * as d3 from 'd3'
+import * as d3 from "d3"
 /**
  * A simple spider chart
  * @param {array<int>} data - performances of the user
@@ -18,15 +18,15 @@ export function spiderChart(data) {
         .y(d => d.y)
     //draw our data ✍🏼
     chart.append("path")
-    .datum(getPathCoordinates([20,20,20,20,20,20]))
-    .attr("d", line)
-    .attr("class", "d3")
-    .attr("fill", "red")
-    .attr("fill-opacity", 0.66)
-    // launch a transition arcTween with the new endAngle 
-    .transition()
-        .duration(750)
-        .call(lineTween, data)
+        .datum(getPathCoordinates([20,20,20,20,20,20]))
+        .attr("d", line)
+        .attr("class", "d3")
+        .attr("fill", "red")
+        .attr("fill-opacity", 0.66)
+        // launch a transition arcTween with the new endAngle 
+        .transition()
+            .duration(750)
+            .call(lineTween, data)
     // Register our fantastic transition ✨
     function lineTween(transition, dataPoints) {
         transition.attrTween("d", function (d) {

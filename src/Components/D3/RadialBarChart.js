@@ -1,4 +1,4 @@
-import * as d3 from 'd3'
+import * as d3 from "d3"
 /**
  * A simple radial bar chart
  * @param {int} radius - use for the chart's size  

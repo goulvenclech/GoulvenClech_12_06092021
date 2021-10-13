@@ -1,4 +1,4 @@
-import * as d3 from 'd3'
+import * as d3 from "d3"
 /**
  * A simple spider chart
  * @param {array<int>} data - performances of the user
@@ -27,66 +27,57 @@ export function linearChart(data) {
     .transition()
         .duration(750)
         .call(lineTween)
-    // Not proud of this, I'll think of a better way
     // add data points and bubbles
     getPathCoordinates([...data]).map((coordinates, index) => {
-        let shadowRect = chart.append("svg:rect")
-            .attr('x', coordinates.x+41)
-            .attr('y', 0)
-            .attr('width', "100%")
-            .attr('height', 300)
+        let group = chart.append("g")
+            .attr("id", "session" + index)
             .attr("class", "d3")
-            .attr('opacity', '0');
-        // hitbox
-        chart.append("svg:rect")
-            .attr('x', coordinates.x+21)
-            .attr('y', 0)
-            .attr('width', 41)
-            .attr('height', 300)
-            .attr("class", "d3 opacity-0")
-            // make it appear on hover + make the infos appears
-            .on('mouseover', function () {
-                dataCircle.transition()
-                    .duration('300')
-                    .attr('opacity', '1')
-                dataBubble.transition()
-                    .attr('opacity', '1')
-                dataText.transition()
-                    .attr('opacity', '1')
-                shadowRect.transition()
-                    .attr('opacity', '0.1')
-            })
-            .on('mouseout', function () {
-                dataCircle.transition()
-                    .duration('300')
-                    .attr('opacity', '0')
-                dataBubble.transition()
-                    .attr('opacity', '0')
-                dataText.transition()
-                    .attr('opacity', '0')
-                shadowRect.transition()
-                    .attr('opacity', '0')
-        })
-        let dataBubble = chart.append("svg:rect")
-            .attr('x', coordinates.x+46)
-            .attr('y', coordinates.y-25)
-            .attr('width', "50")
-            .attr('height', 20)
+        group.append("svg:rect")
+            .attr("x", coordinates.x+41)
+            .attr("y", 0)
+            .attr("width", "100%")
+            .attr("height", 300)
+            .attr("class", "d3")
+            .attr("fill", "rgba(17, 24, 39, 0.3)")
+            .attr("opacity", "0")
+        group.append("svg:rect")
+            .attr("x", getBubbleXCoordinate(coordinates.x)+46)
+            .attr("y", coordinates.y-25)
+            .attr("width", "50")
+            .attr("height", 20)
             .attr("class", "d3 text-white fill-current")
-            .attr('opacity', '0')
-        let dataText = chart.append("svg:text")
-            .attr("x", coordinates.x+71)
+            .attr("opacity", "0")
+        group.append("svg:text")
+            .attr("x", getBubbleXCoordinate(coordinates.x)+71)
             .attr("y", coordinates.y-10)
             .style("text-anchor", "middle")
             .attr("class", "d3 text-xs text-red-600 fill-current")
-            .text(data[index] + "min")  
-            .attr('opacity', '0')
-        let dataCircle = chart.append("svg:circle")
+            .text(data[index] + "min") 
+            .attr("opacity", "0")
+        group.append("svg:circle")
             .attr("class", "d3 text-white fill-current")
-            .attr('opacity', '0')
             .attr("cx", coordinates.x+41)
             .attr("cy", coordinates.y)
-            .attr("r", 4)   
+            .attr("r", 4) 
+            .attr("opacity", "0")
+        // hitbox
+        chart.append("svg:rect")
+                .attr("x", coordinates.x+21)
+                .attr("y", 0)
+                .attr("width", 41)
+                .attr("height", 300)
+                .attr("class", "d3 fill-transparent")
+                .attr("opacity", "1")
+                // make it appear on hover + make the infos appears
+                .on("mouseover", function () {
+                    d3.selectAll(`#session${index} > *`).transition()
+                        .attr("opacity", "1")
+                })
+                .on("mouseout", function () {
+                    d3.selectAll(`#session${index} > *`).transition()
+                        .attr("opacity", "0")
+            })
+
     })
     // Register our fantastic transition ✨
     function lineTween(transition) {
@@ -107,5 +98,10 @@ export function linearChart(data) {
             }
         ))
         return coordinates
+    }
+    // Just to be sure a bubble don't go outside the chart
+    function getBubbleXCoordinate(x) {
+        if(x<=200) return x
+        else return 165
     }
 }
