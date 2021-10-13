@@ -1,12 +1,9 @@
 @module("../D3/LinearChart") external linearChart: (~data: array<int>) => unit = "linearChart"
 
 @react.component
-let make = (~id: string) => {
-  // fetch our back end
-  let apiResult = ApiHooks.useUserAverageSessions(id)
-  let userPerformances = Belt.Array.map(apiResult.sessions, day => {day.sessionLength})
+let make = (~sessions: array<int>) => {
   // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
-  linearChart(~data = userPerformances)
+  linearChart(~data = sessions)
 
   <section className="relative bg-red-600 rounded-lg w-72 h-72 overflow-hidden">
     <h3 className="absolute left-3 top-3 w-3/4 font-semibold text-red-300 text-lg "> 

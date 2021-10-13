@@ -2,14 +2,12 @@
   (~radius: int, ~barWidth: int, ~score: float) => unit = "radialBarChart"
 
 @react.component
-let make = (~id: string) => {
+let make = (~todayScore: float) => {
   // Change the size of the graph
   let radius = 90
   let barWidth = 15
-  // fetch our back end
-  let userData = ApiHooks.useUserData(id)
   // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
-  radialBarChart(~radius = radius, ~barWidth = barWidth, ~score = userData.todayScore)
+  radialBarChart(~radius = radius, ~barWidth = barWidth, ~score = todayScore)
 
   <section className="bg-gray-100 rounded-lg py-4 px-6 w-72 h-72">
     <h3 className="font-semibold text-lg"> 

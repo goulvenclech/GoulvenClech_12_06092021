@@ -1,11 +1,7 @@
  @module("../D3/BarChart") external barChart: (~userWeights: array<int>, ~userCalories: array<int>) => unit = "barChart"
 
 @react.component
-let make = (~id: string) => {
-  // fetch our back end
-  let apiResult = ApiHooks.useUserActivity(id)
-  let userWeights = Belt.Array.map(apiResult.sessions, session => {session.kilogram})
-  let userCalories = Belt.Array.map(apiResult.sessions, session => {session.calories})
+let make = (~userWeights: array<int>, ~userCalories: array<int>) => {
   // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
   barChart(~userWeights = userWeights, ~userCalories = userCalories)
 

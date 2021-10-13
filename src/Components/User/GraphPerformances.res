@@ -1,12 +1,9 @@
 @module("../D3/SpiderChart") external spiderChart: (~data: array<int>) => unit = "spiderChart"
 
 @react.component
-let make = (~id: string) => {
-  // fetch our back end
-  let apiResult = ApiHooks.useUserPerformance(id)
-  let userPerformances = Belt.Array.map(apiResult.data, perf => {perf.value})
+let make = (~performances: array<int>) => {
   // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
-  spiderChart(~data = userPerformances)
+  spiderChart(~data = performances)
 
   <section className="bg-gray-900 rounded-lg py-4 w-72 h-72">
     // empty svg used by d3
