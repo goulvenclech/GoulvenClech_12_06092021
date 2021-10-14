@@ -31,4 +31,15 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    ({
+      addComponents,
+    }) => {
+      addComponents({
+        ".writing-vertical": {
+          writingMode: "vertical-lr",
+          textOrientation: "mixed"
+        }  
+      })
+    }]
 }

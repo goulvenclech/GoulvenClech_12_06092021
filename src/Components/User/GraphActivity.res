@@ -1,15 +1,17 @@
  @module("../D3/BarChart") external barChart: (~userWeights: array<int>, ~userCalories: array<int>) => unit = "barChart"
-
+/**
+ * A chart showing the user activity. Filled by D3.js.
+ */
 @react.component
 let make = (~userWeights: array<int>, ~userCalories: array<int>) => {
-  // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
+  // will fill our SVG with some D3 black magic 🧙🏼‍♂️🪄⚗️✨
   barChart(~userWeights = userWeights, ~userCalories = userCalories)
 
   <section className="bg-gray-100 rounded-lg mx-4 p-4 w-224 h-72">
     <h3 className="w-3/4 font-semibold text-lg"> 
       {React.string(`Activité quotidienne`)} 
     </h3>
-    // empty svg used by d3
+    // empty svg used by D3
     <svg id="barChart" className="h-72 w-full block">
       // background lines
       <path d="M0,190L810,190" className="text-gray-400 stroke-current" strokeWidth="1" />

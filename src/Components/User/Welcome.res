@@ -1,3 +1,6 @@
+/**
+ * Hero of the user page, display the user name and say hello !
+ */ 
 @react.component
 let make = (~user: string) => {
 

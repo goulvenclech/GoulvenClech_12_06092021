@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b961153a-b605-4a1b-a7d8-d1c5b3c687c9/deploy-status)](https://app.netlify.com/sites/distracted-golick-e7f03d/deploys)
 
-Sportsee is an application for monitoring your physical activity. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [D3](https://d3js.org/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
+Sportsee is an application for monitoring your physical activity. Project 12 of the OpenClassrooms "Front End Developer" course. For this project I'm using [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/) and [D3.js](https://d3js.org/) in a [statically typed](https://fr.wikipedia.org/wiki/Typage_statique) [functional](https://en.wikipedia.org/wiki/Functional_programming) paradigm.
 
 **Documentation :**
 - [Home page](https://github.com/GoulvenC/GoulvenClech_12_02082021/wiki) ([project organisation]() | [repository description]() | [installation]())
@@ -17,7 +17,7 @@ Sportsee is an application for monitoring your physical activity. Project 12 of 
 
 ## Installation
 
-***Work in progress***
+This project uses [Yarn](https://yarnpkg.com/) as package manager, [Vite](https://vitejs.dev) as frontend environment, and requires [Node.js]() 12.13.0 or higher. I use [ReScript](https://rescript-lang.org/), [React](https://reactjs.org/), [D3.js](https://d3js.org/), [PostCSS](https://github.com/postcss/postcss) with plugins [TailwindCSS](https://tailwindcss.com/) ([JIT](https://tailwindcss.com/docs/just-in-time-mode)) and [autoprefixer](https://github.com/postcss/autoprefixer).
 
 1 - Install [Yarn](https://yarnpkg.com/) on your system
 

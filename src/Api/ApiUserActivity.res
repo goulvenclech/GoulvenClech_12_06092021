@@ -14,16 +14,37 @@ type userActivity = {
     sessions: array<userSession>,
 }
 // type of the fetching respond
-type respond = {
-    data: userActivity
-}
+type respond = {status: string, data: userActivity}
 // an empty respond used as placeholder
-let emptyRespond: respond = {data:{
+let emptyData = {
     userId: 0,
-    sessions:[
-        {day: "2001-01-01", kilogram: 0, calories: 0}
-    ]
-}}
+    sessions:[{day: "2001-01-01", kilogram: 0, calories: 0}]
+}
+let emptyRespond: respond = {
+    status: `✅`,
+    data: emptyData
+}
+// let's handle API errors
+let errorHandler = (err: Js.Promise.error): respond => {
+    switch err {
+    | exception error => {
+        let optError: option<Js.Exn.t> = Js.Exn.asJsExn(error)
+        switch optError {
+        | Some(error) => {
+                switch Js.Exn.name(error) {
+                | Some(errorNum) => 
+                    switch Js.Exn.message(error) {
+                    | Some(errorMessage) => {{status: `⛔ ${errorNum} : ${errorMessage}`,data:emptyData}}
+                    | None => {{status: `⛔ ${errorNum} : no error message`,data:emptyData}}
+                    }
+                | None => {{status: `🤒 invalid error`,data:emptyData}}
+                }
+            }
+        | None => {{status: `⚠️ Not a Js.Exn.t`,data:emptyData}}
+        }}
+    | _ => {{status: `⚠️ Not an exn`,data:emptyData}}
+    }
+}
 // a decoder to transform the JSON respond into a proper ReScript record
 module Decode = {
     open Json.Decode
@@ -37,6 +58,7 @@ module Decode = {
         sessions: json |> field("sessions", array(userSession))
     }
     let respond = (json) => {
+        status: `✅`,
         data: json |> field("data", userActivity),
     }
 }

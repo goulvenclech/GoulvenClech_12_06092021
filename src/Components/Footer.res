@@ -1,3 +1,6 @@
+/**
+ * Placeholder navigation.
+ */
 @react.component
 let make = () => {
   <nav className="sticky flex bottom-0 gap-4 p-2 opacity-30">

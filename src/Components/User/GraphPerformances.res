@@ -1,12 +1,14 @@
 @module("../D3/SpiderChart") external spiderChart: (~data: array<int>) => unit = "spiderChart"
-
+/**
+ * A chart showing the user performances. Filled by D3.js.
+ */
 @react.component
 let make = (~performances: array<int>) => {
-  // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
+  // will fill our SVG with some D3 black magic 🧙🏼‍♂️🪄⚗️✨
   spiderChart(~data = performances)
 
   <section className="bg-gray-900 rounded-lg py-4 w-72 h-72">
-    // empty svg used by d3
+    // empty svg used by D3
     <svg id="SpiderChart" className="ml-1 h-72 block">
       // background white hexagons
       <path d="M140,103.75L117.26683315065848,116.87499999999999L117.26683315065848,143.125L140,156.25L162.7331668493415,143.125L162.7331668493415,116.875L140,103.75" 

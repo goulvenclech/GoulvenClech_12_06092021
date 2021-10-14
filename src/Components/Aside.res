@@ -1,18 +1,13 @@
+/**
+ * Placeholder.
+ */
 @react.component
 let make = () => {
-  <aside className=" hidden xl:block xl:sticky float-left h-screen w-32 bg-black top-0">
-    <nav className="flex flex-col justify-between h-72 my-36 text-white font-semibold">
-      <a onClick={_ => RescriptReactRouter.push("/")} tabIndex={0} className="cursor-pointer">
-        {React.string(`Test`)}
-      </a>
-      <p>
-        {React.string(`Test`)}
-      </p>
-      <p>
-        {React.string(`Test`)}
-      </p>
-      <p>
-        {React.string(`Test`)}
+  <aside className="hidden xl:sticky xl:block float-left h-screen w-28 bg-black top-0 z-30">
+    <nav className="flex flex-col text-white">
+      <img src="/aside.svg" className="w-1/2 mx-auto mb-40 my-36" />
+      <p className="block writing-vertical rotate-180 mr-11 flex-grow">
+        {React.string(`Copyright, SportSee 2020`)}
       </p>
     </nav>
   </aside>

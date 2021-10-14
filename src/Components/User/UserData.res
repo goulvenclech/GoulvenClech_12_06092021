@@ -6,11 +6,12 @@ type dataInfos = {
     icon: React.element
 }
 type datas = array<dataInfos>
-
-
+/**
+ * Four blocks, displaying the key data of our user.
+ */
 @react.component
 let make = (~calorieCount: int, ~proteinCount: int, ~carbohydrateCount: int, ~lipidCount: int) => {
-
+    // for each key data, register a name, color, value, unit & icon.
     let datas: datas = [{
             name: "Calories",
             color: "red", 
@@ -54,6 +55,7 @@ let make = (~calorieCount: int, ~proteinCount: int, ~carbohydrateCount: int, ~li
 
     <section className="px-4 xl:px-0 flex flex-wrap gap-4">
         {
+            // Create a block for each key data
             React.array(Belt.Array.mapWithIndex(datas, (index, data) => {
                 <article className="p-7 bg-gray-100 rounded-lg w-80 flex" key={Belt.Int.toString(index)}>
                     // Required to add every color in tailwind.config.js safelist

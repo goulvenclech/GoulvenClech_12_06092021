@@ -1,3 +1,6 @@
+/**
+ * Placeholder.
+ */
 @react.component
 let make = () => {
   <header className="flex px-16 py-2 items-center justify-between font-semibold text-xl text-white bg-black">

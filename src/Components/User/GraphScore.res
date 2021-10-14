@@ -1,19 +1,21 @@
 @module("../D3/RadialBarChart") external radialBarChart: 
   (~radius: int, ~barWidth: int, ~score: float) => unit = "radialBarChart"
-
+/**
+ * A chart showing the user score. Filled by D3.js.
+ */
 @react.component
 let make = (~todayScore: float) => {
   // Change the size of the graph
   let radius = 90
   let barWidth = 15
-  // will fill our SVG with some d3 black magic 🧙🏼‍♂️🪄⚗️✨
+  // will fill our SVG with some D3 black magic 🧙🏼‍♂️🪄⚗️✨
   radialBarChart(~radius = radius, ~barWidth = barWidth, ~score = todayScore)
 
   <section className="bg-gray-100 rounded-lg py-4 px-6 w-72 h-72">
     <h3 className="font-semibold text-lg"> 
       {React.string(`Score`)} 
     </h3>
-    // empty svg used by d3
+    // empty svg used by D3
     <svg id="RadialBarChart" className="h-72">
       // background white circle
       <circle 
